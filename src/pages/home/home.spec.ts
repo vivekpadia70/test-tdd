@@ -59,4 +59,33 @@ describe('Page: Product Page', () => {
       expect(a.length).toBe(1);
       expect(a[0]).toBe('new');
     });
+
+    //testing things on screen
+
+    it('should contain an input field', () => {
+      fixture.detectChanges();
+
+      de = fixture.debugElement.query(By.css('ion-input'));
+      el = de.nativeElement;
+
+      expect(el).toBeTruthy();
+    });
+
+    it('should contain a button', () => {
+      fixture.detectChanges();
+
+      de = fixture.debugElement.query(By.css('ion-button'));
+      el = de.nativeElement;
+
+      expect(el).toBeTruthy();
+    });
+
+    it('should contain a list', () => {
+      fixture.detectChanges();
+
+      de = fixture.debugElement.query(By.css('ion-list'));
+      el = de.nativeElement;
+
+      expect(el).toBeTruthy();
+    });
 });
