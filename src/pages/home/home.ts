@@ -11,4 +11,7 @@ export class HomePage {
 
   }
 
+  addNewTask(a:any[], task: string):void{
+    console.log(task);
+  }
 }
