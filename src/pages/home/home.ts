@@ -6,10 +6,12 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
+
   task_list: any = true;
   task: any;
+
   constructor(public navCtrl: NavController) {
-      this.task_list=['hello', 'world'];
+      this.task_list=[];
   }
 
   addNewTask(a:any[], task: string):void{
@@ -17,7 +19,8 @@ export class HomePage {
     a.push(task);
   }
 
-  pri(){
-    console.log('helllo world')
+  removeTask(a:any[], task: string):void{
+    console.log('removing');
+    a.splice(a.indexOf(task), 1);
   }
 }

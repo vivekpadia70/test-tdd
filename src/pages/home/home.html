@@ -9,7 +9,7 @@
 <ion-content padding>
   <ion-list>
     <ion-item>
-      <ion-label fixed>Add task</ion-label>
+      <ion-label stacked>Add task</ion-label>
       <ion-input [(ngModel)]="task" type="text"></ion-input>
     </ion-item>
   </ion-list>
@@ -17,7 +17,7 @@
     <button ion-button (click)="addNewTask(task_list, task)">Add task</button>
   </div>
   <ion-list>
-    <ion-item *ngFor="let item of task_list">
+    <ion-item *ngFor="let item of task_list" (swipe)="removeTask(task_list, item)">
       <h2>{{item}}</h2>
     </ion-item>
   </ion-list>

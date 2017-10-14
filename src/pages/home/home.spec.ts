@@ -54,10 +54,9 @@ describe('Page: Product Page', () => {
     // comp.addNewTask(a, 'new');
 
     it('should add new task', ()=>{
-      let a:any[];
-      comp.addNewTask(a,'new');
-      expect(a.length).toBe(1);
-      expect(a[0]).toBe('new');
+      comp.addNewTask(comp.task_list,'new');
+      expect(comp.task_list.length).toBe(1);
+      expect(comp.task_list[0]).toBe('new');
     });
 
     //testing things on screen
@@ -74,7 +73,7 @@ describe('Page: Product Page', () => {
     it('should contain a button', () => {
       fixture.detectChanges();
 
-      de = fixture.debugElement.query(By.css('ion-button'));
+      de = fixture.debugElement.query(By.css('button'));
       el = de.nativeElement;
 
       expect(el).toBeTruthy();
@@ -87,5 +86,13 @@ describe('Page: Product Page', () => {
       el = de.nativeElement;
 
       expect(el).toBeTruthy();
+    });
+
+    //testing function to cancel task
+    it('should remove task which is to be canceled', () => {
+      comp.addNewTask(comp.task_list, 'new');
+      expect(comp.task_list.length).toBe(1);
+      comp.removeTask(comp.task_list, 'new');
+      expect(comp.task_list.length).toBe(0);
     });
 });
